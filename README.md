@@ -17,7 +17,7 @@ We built linear model for price prediction with these two data sets. In both dat
 
 Two data sets: one is one is from the ggplot2 package(diamonds), one is from diamondsc.info (bigdiamonds) to explore variables which determine the price of a diamond
 
-The first dataset, diamonds, coming with the ggplot2 package, contains over 50,000 rows and XX columns. 
+The first dataset, diamonds, coming with the ggplot2 package, contains over 50,000 rows and 10 columns. 
 The second dataset, bigdiamonds dataset with almost 600,000 rows of data (10 times bigger than the previous diamonds dataset). It is slightly different structured from the diamonds dataset we just talked about above.
 Goal: build price prediction model for both datasets
 
@@ -26,6 +26,7 @@ Goal: build price prediction model for both datasets
 Fig. 2 Floor map with calibration points (red point, 166 points in total, spaced 1 meter apart in the hallways of one floor) and mac position (black point, 6 routers in total).
 
 # Data Analysis Method
+
 Through taking some samples out from 50,000 rows, we found out that carat, x, y, z place an important role in determining the final price of a diamond. 
 I have two RMD files in this repository. The one named "XXXX" is the one with all my comments and graphs. The one named "XXX" is a 'cleaned' version of the previous one. It only has all the required lines to run the final position prediction estimation, without any comments or graphs.
 
@@ -43,9 +44,6 @@ In part 11, through k-Nearest-Neighbour method, we built prediction model based 
 
 Fig. 4 Error against the number of nearby calibration points used in the training model.
 
-![AnglePrediction](doc/AnglePrediction.png?raw=true "AnglePrediction")
-
-Fig. 5 Error against the number of nearby angles used in the training model.
 
 In part 12, we visualized final result by plotting the prediction X and Y location against actual X and Y location in the online dataset via ggplot2. This result is shown below in Fig. 6
 
@@ -61,4 +59,5 @@ In this study,
 # References
 
 This is part of a in-course project (Data Analysis with R) on Udacity: https://classroom.udacity.com/courses/ud651
-The code for scrape bigdiamond can be downloaded from: https://github.com/SolomonMg/diamonds-data
+
+The code for scraping bigdiamond can be downloaded from: https://github.com/SolomonMg/diamonds-data
