@@ -1,7 +1,7 @@
 # Diamond Price Prediction
 
 (Please wait a few seconds for figures to show up)
-Using two datasets, one from the ggplot2 package(diamonds) 2008 (diamondsc.info), one from diamondsc.info (bigdiamonds) to explore variables which determine diamond price
+Using two datasets, one from the ggplot2 package(diamonds, data collected from diamondsc.info in 2008), one from diamondsc.info (bigdiamonds) to explore variables which determine diamond price
 
 # General Background/Research Purpose
 
@@ -15,18 +15,25 @@ We built linear model for price prediction with these two data sets. In both dat
 
 # Brief Background Information about the datasets
 
-Two data sets: one is one is from the ggplot2 package(diamonds), one is from diamondsc.info (bigdiamonds) to explore variables which determine the price of a diamond
+Two data sets: one is one is from the ggplot2 package(diamonds), one is from diamondsc.info (bigdiamonds) to explore variables which determine the price of a diamond.
 
 The first dataset, diamonds, coming with the ggplot2 package, contains over 50,000 rows and 10 columns. 
+
 The second dataset, bigdiamonds dataset with almost 600,000 rows of data (10 times bigger than the previous diamonds dataset). It is slightly different structured from the diamonds dataset we just talked about above.
+
 Goal: build price prediction model for both datasets
 
-![FloorMapandMac](doc/CalibPointandMac.png?raw=true "FloorMapandMac")
-
-Fig. 2 Floor map with calibration points (red point, 166 points in total, spaced 1 meter apart in the hallways of one floor) and mac position (black point, 6 routers in total).
 
 # Data Analysis Method
+I prepared two r files in this repository.
 
+I started with looking into smaller diamonds data set, which comes with ggplot2 package. This is save in '', which has seven sections in total. In section 1, I started with loading required libraries and dataset. In section 2 and 3, I briefly explored the relationship between carat and price. I randomly selected 5000 rows from the dataset and adopt ggpairs to do quick analysis on the relationship between different variables in section 4 (ggpairs figure attached above, Fig. 1). I found out that carat, x, y, z shows strong correlation with price variable. In section 5 and 6, I further studied different factorial variablies (cut, color, clarity) effect towards price. After gathering all these information, in section 7, I successfully built a linear model with lm().
+
+Taking all the previous experience working with diamonds dataset, I went ahead and attempted to build a similar price prediction model with bigdiamonds dataset. This is save in '', which has XX sections in total.
+
+
+
+The one named ''
 Through taking some samples out from 50,000 rows, we found out that carat, x, y, z place an important role in determining the final price of a diamond. 
 I have two RMD files in this repository. The one named "XXXX" is the one with all my comments and graphs. The one named "XXX" is a 'cleaned' version of the previous one. It only has all the required lines to run the final position prediction estimation, without any comments or graphs.
 
