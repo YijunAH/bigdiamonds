@@ -38,13 +38,12 @@ Taking all the previous experience working with diamonds dataset, I went ahead a
 ![ColorClarityPrice](doc/ColorClarityPrice.png?raw=true "ColorClarityPrice")
 
 Fig. X Size factor (xyz) vs price, with color and clarity factor added to the plot. 
-Color: from D (best) IF (best)to J (worst)
+Color: from D (best) to J (worst)
 Clarity: IF (best), VVS2, VVS1, Vs2, VS1, SI2, SI1, I1 (worst)
 
 # Conclusions
 
-In this study, we formatted offline and online dataset into clean, manageable dataframes. We looked at different variables which affect signal strength and plotted these findings via ggplot2. Using k-Nearest-Neighbour method, we built prediction model based on offline and tested the model with the online. We found out we can minimize calculation error by employ 5 nearest calibration points and 3 angles into the training model.
-In this study, 
+In this study, we looked at two dataset related to diamond price with different variables. We started with the smaller dataset, draw ggpairs plots, looked at interesting factors and trends which determine diamond price. We created a size factor (cube root of x*y*z) to present size factor. This more acurate represent the size of a diamond, compared with the carat variable in the dataframe. We built linear model which accurately predict diamond price. Later, we moved to a much larger dataset. We randomly made a smaller subset of this large dataset for less time consuming plotting. We used what we have found from the previous smaller diamonds dataframe and then built a similar price prediction model with this large dataset. In both cases, our R-squared reached 1.
 
 # References
 
