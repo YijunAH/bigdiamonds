@@ -7,9 +7,9 @@ Using two datasets, one from the ggplot2 package(diamonds, data collected from d
 
 Besides carat weight, there are other factors/variances that determine the final price of a diamond. Studies show that most of Americans spend one to three months salary on an engagement ring. Getting a diamond for wedding is a big cost for new couples. We want to look into two diamond datasets and explore what factors plays an important role in price and what factors are not so important.
 
-![ggparis_Bigdia](doc/ggparis_Bigdia.png?raw=true "ggparis_Bigdia")
+![ggpairs_Bigdia](doc/ggparis_Bigdia.png?raw=true "ggparis_Bigdia")
 
-Fig.1 
+Fig.1 Ggpairs with 10,000 rows from bigdiamonds dataset.
 
 We built linear model for price prediction with these two data sets. In both dataset, the R-squred reached 1.
 
@@ -29,34 +29,17 @@ I prepared two r files in this repository.
 
 I started with looking into smaller diamonds data set, which comes with ggplot2 package. This is save in '', which has seven sections in total. In section 1, I started with loading required libraries and dataset. In section 2 and 3, I briefly explored the relationship between carat and price. I randomly selected 5000 rows from the dataset and adopt ggpairs to do quick analysis on the relationship between different variables in section 4 (ggpairs figure attached above, Fig. 1). I found out that carat, x, y, z shows strong correlation with price variable. In section 5 and 6, I further studied different factorial variablies (cut, color, clarity) effect towards price. After gathering all these information, in section 7, I successfully built a linear model with lm().
 
-Taking all the previous experience working with diamonds dataset, I went ahead and attempted to build a similar price prediction model with bigdiamonds dataset. This is save in '', which has XX sections in total.
+![PriceHist](doc/PriceHist.png?raw=true "PriceHist")
 
+Fig. X Price histogram created with bigdiamonds dataset. It is not simple Gaussian distribution. And this is normal with some of the price related data. Since we are looking at poor, middle，and rich group. Different groups have different budget when purchasing diamonds.
 
+Taking all the previous experience working with diamonds dataset, I went ahead and attempted to build a similar price prediction model with bigdiamonds dataset. This is save in 'bigdiamonds.r', which has 6 sections in total. Firstly, in section 1 and 2, I looked at strutucral difference between this and diamonds dataset and formatted this bigdiamonds to preferred dataframe. I quickly realized that since this dataset is too big, it is almost impossible to plot all the data in one plot and we will need to handle overplotting issue. In section 4, I randomly selected 10, 000 rows from the dataset, named it 'bigdia_samp' and adopt ggpairs to do quick analysis on the relationship between different variables. In section 5, I looked at three variablies (cut, color, clarity). In section 6, I built a linear model with lm() first with the small subset and then extended to bigdiamonds dataset.
 
-The one named ''
-Through taking some samples out from 50,000 rows, we found out that carat, x, y, z place an important role in determining the final price of a diamond. 
-I have two RMD files in this repository. The one named "XXXX" is the one with all my comments and graphs. The one named "XXX" is a 'cleaned' version of the previous one. It only has all the required lines to run the final position prediction estimation, without any comments or graphs.
+![ColorClarityPrice](doc/ColorClarityPrice.png?raw=true "ColorClarityPrice")
 
-In '', I divided this study into 12 parts/sections. Part 1 and 2 focused on data cleaning and formating. We started with playing with the offline dataset and formated it from txt into a clean and organized dataframe. From part 3 to part 8, we looked at different variables, orientation, mac address, X and Y position, distance to mac and their effect towards signal strength.
-
-![SignalStrengthvsDist](doc/SignalStrengthvsDist.png?raw=true "SignalStrengthvsDist")
-
-Fig. 3 Signal strength plotted against distance to mac. Signal strength decreases as the distance to mac increase
-
-Part 9 to part 10, we moved on to the online dataset (test dataset). We modified it into a dataframe format similar as offline dataframe. Online dataset contains information measured at 60 radom locations. Our goal was to built a prediction model using the signal strength in the offline dataset to predict corresponding X and Y position in the online dataset. 
-
-In part 11, through k-Nearest-Neighbour method, we built prediction model based on offline dataset and tested the model with the online dataset. We calculated the error in this model and further explored the number of nearby calibration points and the number of nearby angles we need to include in the training model in order to minimize our estimation error.
-
-![NeighbourPrediction](doc/NeighbourPrediction.png?raw=true "NeighbourPrediction")
-
-Fig. 4 Error against the number of nearby calibration points used in the training model.
-
-
-In part 12, we visualized final result by plotting the prediction X and Y location against actual X and Y location in the online dataset via ggplot2. This result is shown below in Fig. 6
-
-![FloorMapPredictedActualLocs](doc/FloorMapPredictedActualLocs.png?raw=true "FloorMapPredictedActualLocs")
-
-Fig. 6 Floor map with actual position (solid black), estimated position (solid red) and calibration points (hollow grey circle)
+Fig. X Size factor (xyz) vs price, with color and clarity factor added to the plot. 
+Color: from D (best) IF (best)to J (worst)
+Clarity: IF (best), VVS2, VVS1, Vs2, VS1, SI2, SI1, I1 (worst)
 
 # Conclusions
 
