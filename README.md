@@ -15,7 +15,7 @@ Fig.1 Pairs plots which were generalized via ggpairs with 10,000 rows from bigdi
 
 The first dataset, diamonds, coming with the ggplot2 package, contains over 50,000 rows and 10 columns. 
 
-The second dataset, bigdiamonds dataset with almost 600,000 rows (10 times bigger than the previous diamonds dataset). It is slightly different structured from the diamonds dataset.
+The second dataset, bigdiamonds dataset with almost 600,000 rows (10 times bigger than the previous diamonds dataset). It is slightly different structured from the diamonds dataset (two new columns: cert and measurement).
 
 Goal: build price prediction model for both datasets
 
@@ -28,7 +28,7 @@ I started with the smaller diamonds data set, which comes with ggplot2 package. 
 ![ColorClarityCutPrice](doc/ColorClarityCutPrice.png?raw=true "ColorClarityCutPrice")
 
 Fig. 2 Size factor (xyz) against price with cut, clarity, color factors added into the plot. It is really hard to see if better cut cause higher price. From the graph, it is clear that better clarity and color do cause higher in price.
-Cut: quality of the cut (Fair, Good, Very Good, Premium, Ideal)
+Cut: quality of the cut (Fair, Good, Very Good, Premium, Ideal) Although there are five levels in cut, most of the diamonds are Ideal, Premium or Very Good
 Color: from D (best) to J (worst)
 Clarity: IF (best), VVS2, VVS1, Vs2, VS1, SI2, SI1, I1 (worst)
 
