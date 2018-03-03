@@ -26,15 +26,15 @@ bigdiamonds<-diamondsbig
 
 ### 2. Cleaning and Formating the bigdiamonds datasets
 
-View(bigdiamonds)
+# View(bigdiamonds)
 # two new columns comparing with the diamond dataset: cert and measurement
 # cert: according to Blue Nile, a diamond certificate, also called a diamond grading report, is a report created by a team of gemologists. Two common laboratories for doing such analysis and generate certificates are: Gemological Institute of America (GIA) and the American Gem Society Laboratories (AGSL)
 # measurement: x, y, z information, stored as charater
 
-dim(bigdiamonds)
+# dim(bigdiamonds)
 # 598024 rows and 12 columns
 
-str(bigdiamonds)
+# str(bigdiamonds)
 # cut: 3 levels, different from the diamond dataset which has 5 levels
 # color: 9 levels, different from the diamond dataset which has 7 levels
 # clarity: 10 levels, different from the diamond dataset which has 8 levels
@@ -42,13 +42,13 @@ str(bigdiamonds)
 # cert: 9 levels
 # a  bunch of NA in price
 
-summary(bigdiamonds)
+# summary(bigdiamonds)
 # table and depth: Min is 0 which should not be the case due to the nature of the data
 # cert: most of them are done at GIA
 # price have 713 NA's
 # x, y, z have 1000-2000 NA values
 
-summary(diamondsbig$price)
+# summary(diamondsbig$price)
 # median is 3503, while mean is 8753
 
 bigdiamonds<-subset(bigdiamonds, !is.na(bigdiamonds$price))
@@ -201,8 +201,7 @@ mtable(fit1, fit2, fit3, fit4, fit5)
 
 ### Building a linear model with the bigdiamonds dataset
 bigfit1 <- lm(log(price) ~ xyz, data = bigdiamonds)
-bigfit2 <- update(fit1, ~ . + color)
-bigfit3 <- update(fit2, ~ . + clarity)
-bigfit4 <- update(fit3, ~ . + carat)
-bigfit5 <- update(fit4, ~ . + cert)
-mtable(bigfit1, bigfit2, bigfit3, bigfit4, bigfit5)
+bigfit2 <- update(bigfit1, ~ . + color)
+bigfit3 <- update(bigfit2, ~ . + clarity)
+bigfit4 <- update(bigfit3, ~ . + cert)
+mtable(bigfit1, bigfit2, bigfit3, bigfit4)
